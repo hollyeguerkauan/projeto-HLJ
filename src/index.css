@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Cinzel', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #0B0914;
+    color: #F8FAFC;
+    font-family: var(--font-sans);
+    overflow: hidden;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans-ui {
+  font-family: var(--font-sans);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom subtle scrollbars for modals */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.45);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.75);
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.35), inset 0 0 12px rgba(245, 158, 11, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(245, 158, 11, 0.65), inset 0 0 18px rgba(245, 158, 11, 0.28);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 3.4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.4s ease-in-out infinite;
+}
